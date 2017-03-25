@@ -5,7 +5,7 @@ People       = mongoose.model('People');
 */
 
 /*
-In my case, I initialized people array with one
+In my case, I initialized the people array with one
 person instead of it being empty
 */
 var people = [
@@ -43,14 +43,16 @@ exports.modify = function(name, newCity){
   return result[0];
 };
 
-/* returns people array with specified person removed*/
+/* returns person that was deleted from the array */
 exports.delete = function(id){
+  var deleted =[];
   for(var i=0;i<people.length;i++){
     if(people[i].id === id){
+      deleted.push(people[i]);
       people.splice(i,1);
     }
   }
-  return people ;
+  return deleted;
 };
 
 /* returns last added person from the people array */

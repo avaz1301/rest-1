@@ -16,14 +16,17 @@
 </head>
 <body>
   <div class="row align-middle" style="padding-top:100px;">
-    <div class="column text-center">
+    <div class="column large-12 text-center">
       <h1>REST-1</h1>
       <h3>Click the Button to begin the client request sequence!</h3>
       <p>(Each Request is made 2 sec. after the previous.)</p>
     </div>
-    <div class="column text-center">
+    <div class="column large-12 text-center">
       <button class="button primary large" style="border-radius:10px;" onclick="startRequestSequence()">Let's Begin</button>
     </div>
+    <div class="column large-4 small-4 text-left" style="visibility: hidden;">text</div>
+    <div id="response-text" class="column large-4 small-4 text-left"></div>
+    <div class="column large-4 small-4 text-left" style="visibility: hidden;">text</div>
   </div>
 
 </body>

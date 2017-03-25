@@ -18,6 +18,8 @@ function createRequest(data){
     var result = (JSON.parse(xhr.responseText));
     console.log("Response: ");
     console.log(result);
+    var elem = document.getElementById('response-text');
+    elem.innerHTML += '<p><strong>RESPONSE:</strong> '+xhr.status+' '+JSON.stringify(result.body)+'</p>';
   })
 };
 
@@ -26,17 +28,22 @@ submitRequest() properly formats request and sends request
 to proper endpoint
 */
 function submitRequest(url, method, data, callback = undefined) {
-  console.log(url+" "+method+" "+data);
+  var elem = document.getElementById('response-text');
+  elem.innerHTML += '<p><strong>REQUEST:</strong> '+method+'  '+url+'  '+ JSON.stringify(data)+'</p>';
+  console.log(method+" "+url+" "+JSON.stringify(data));
   console.log();
   var _data = null;
   if(data){
      _data =  JSON.stringify(data);
   }
   var xhr = new XMLHttpRequest();
-  // http://localhost:3001
+  // http://localhost:3001 for local testing
+  //https://rest-1.herokuapp.com for heroku
   xhr.open(method, 'https://rest-1.herokuapp.com'+url);
   xhr.setRequestHeader("Content-Type", "application/json");
   xhr.onreadystatechange = function(){
+    //when request is complete and response status is 'OK'
+    //fire off success callback
     if(xhr.readyState == 4 && xhr.status == 200){
       return callback(200, xhr);
     }else if(xhr.status == 400){

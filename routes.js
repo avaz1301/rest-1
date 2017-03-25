@@ -79,6 +79,7 @@ router.delete('/people/:id', function(req,res){
   console.log("IN DELETE ID");
   var id = parseInt(req.params.id);
   var resData = people.delete(id);
+  (resData.length > 0) ? resData.push({delete:'Successful'}) : resData.push({delete:'Failed'});
   console.log(resData);
   res.writeHead(200, header);
   var resBody = {
