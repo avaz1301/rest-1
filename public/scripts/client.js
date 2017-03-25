@@ -39,7 +39,7 @@ function submitRequest(url, method, data, callback = undefined) {
   var xhr = new XMLHttpRequest();
   // http://localhost:3001 for local testing
   //https://rest-1.herokuapp.com for heroku
-  xhr.open(method, 'https://rest-1.herokuapp.com'+url);
+  xhr.open(method, 'http://localhost:3001'+url);
   xhr.setRequestHeader("Content-Type", "application/json");
   xhr.onreadystatechange = function(){
     //when request is complete and response status is 'OK'
