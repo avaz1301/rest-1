@@ -33,6 +33,7 @@ function submitRequest(url, method, data, callback = undefined) {
      _data =  JSON.stringify(data);
   }
   var xhr = new XMLHttpRequest();
+  // http://localhost:3001
   xhr.open(method, 'https://rest-1.herokuapp.com:3001'+url);
   xhr.setRequestHeader("Content-Type", "application/json");
   xhr.onreadystatechange = function(){

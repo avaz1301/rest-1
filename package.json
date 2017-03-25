@@ -1,17 +1,21 @@
 {
-  "name": "rest-project",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "start": "node ./bin/www"
-  },
-  "dependencies": {
-    "body-parser": "~1.15.2",
-    "ejs": "^2.5.6",
-    "express": "~4.14.0",
-    "xmlhttprequest": "^1.8.0"
-  },
-  "devDependencies": {
-    "mongoose": "^4.9.1"
-  }
+    "name": "rest-1",
+    "version": "1.0.0",
+    "description": "Simple REST server",
+    "author": "Angelo Zamudio",
+    "license": "ISC",
+    "private": true,
+    "scripts": {
+        "start": "node sever.js"
+    },
+    "dependencies": {
+        "body-parser": "~1.15.2",
+        "ejs": "^2.5.6",
+        "express": "~4.14.0",
+        "xmlhttprequest": "^1.8.0",
+        "serve-favicon": "~2.3.0"
+    },
+    "devDependencies": {
+        "mongoose": "^4.9.1"
+    }
 }

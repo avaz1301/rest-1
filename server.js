@@ -19,6 +19,7 @@ specified endpoints
 */
 var express    = require('express');
 var path       = require('path');
+var favicon    = require('serve-favicon');
 var app        = express();
 var bodyParser = require('body-parser');
 var routes     = require('./routes');
@@ -32,5 +33,8 @@ app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use('/', routes); //specify route handler for app
 
-app.listen(3001);
-console.log('Now listening on port 3001...');
+const PORT = process.env.PORT || 3001;
+
+app.listen(PORT, function(){
+  console.log('Server now listening on port '+PORT+'...');
+});
